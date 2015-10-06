@@ -1,0 +1,16 @@
+{
+  "name": "complex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/complex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "complex",
+    "number",
+    "math"
+  ],
+  "author": "Johan Karlsson <donkarlssonsan@gmail.com> (https://twitter.com/DonKarlssonSan)",
+  "license": "MIT"
+}
