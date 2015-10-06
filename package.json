@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/complex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine-node spec"
   },
   "keywords": [
     "complex",
@@ -12,5 +12,8 @@
     "math"
   ],
   "author": "Johan Karlsson <donkarlssonsan@gmail.com> (https://twitter.com/DonKarlssonSan)",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
 }
