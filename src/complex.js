@@ -28,4 +28,16 @@ exports.Complex = function (real, im) {
     var im = (b*c-a*d)/(c*c+d*d)
     return {r: real, i: im};
   };
+  
+  // Complex power
+  // Let z = r(cos θ + i sin θ)
+  // Then z^n = r^n (cos nθ + i sin nθ)
+  this.pow = function(n) {
+    //console.log(this);
+    var θ = Math.atan2(this.i, this.r);
+    var r = Math.sqrt(this.r * this.r + this.i * this.i);
+    var real = Math.pow(r, n) * Math.cos(n*θ);
+    var im = Math.pow(r, n) * Math.sin(n*θ);
+    return {r: real, i : im};
+  };
 };
