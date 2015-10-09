@@ -39,4 +39,14 @@ describe("Complex number", function () {
     expect(testResult.r).toBeCloseTo(0, 12);
     expect(testResult.i).toBeCloseTo(-512, 12);
   });
+  
+  it("should be possible to chain method calls", function () {
+    var c1 = new complex.Complex(3, 8);
+    var c2 = new complex.Complex(2, 3);
+    
+    var result = c1.mult(c2).div(c2).mult(c2).div(c2);
+    expect(result.r).toBe(c1.r);
+    expect(result.i).toBe(c1.i);
+    
+  });
 });

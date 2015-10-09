@@ -1,7 +1,7 @@
 // Complex numbers 
 // verbose code on purpose
 // just playing around with node.js
-exports.Complex = function (real, im) {
+function Complex(real, im) {
   this.r = real;
   this.i = im;
   
@@ -14,7 +14,7 @@ exports.Complex = function (real, im) {
     var d = complex.i;    
     var real = a * c - b * d;
     var im = a * d + b * c;
-    return {r: real, i: im};
+    return new Complex(real, im);
   };
 
   // Complex division
@@ -26,7 +26,7 @@ exports.Complex = function (real, im) {
     var d = complex.i;
     var real = (a*c+b*d)/(c*c+d*d);
     var im = (b*c-a*d)/(c*c+d*d)
-    return {r: real, i: im};
+    return new Complex(real, im);
   };
   
   // Complex power
@@ -38,6 +38,8 @@ exports.Complex = function (real, im) {
     var r = Math.sqrt(this.r * this.r + this.i * this.i);
     var real = Math.pow(r, n) * Math.cos(n*θ);
     var im = Math.pow(r, n) * Math.sin(n*θ);
-    return {r: real, i : im};
+    return new Complex(real, im);
   };
 };
+
+exports.Complex = Complex;
