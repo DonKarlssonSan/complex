@@ -3,10 +3,10 @@
 # complex
 A JavaScript library for making calculations with complex numbers.
 
-## Installing - NOT YET
+## Installing
 Run this on the command line:
 
-    npm install complex
+    npm install complex-numbers
 
 ## Using
 In a JavaScript file:
