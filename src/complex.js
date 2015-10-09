@@ -40,6 +40,14 @@ function Complex(real, im) {
     var im = Math.pow(r, n) * Math.sin(n*θ);
     return new Complex(real, im);
   };
+  
+  this.add = function(complex) {
+    return new Complex(this.r + complex.r, this.i + complex.i);
+  };
+  
+  this.sub = function(complex) {
+    return new Complex(this.r - complex.r, this.i - complex.i);
+  };
 };
 
 exports.Complex = Complex;

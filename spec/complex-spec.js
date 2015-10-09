@@ -47,6 +47,23 @@ describe("Complex number", function () {
     var result = c1.mult(c2).div(c2).mult(c2).div(c2);
     expect(result.r).toBe(c1.r);
     expect(result.i).toBe(c1.i);
+  });
+  
+  it("should add", function () {
+    var c1 = new complex.Complex(3, 8);
+    var c2 = new complex.Complex(2, 3);
     
+    var result = c1.add(c2);
+    expect(result.r).toBe(5);
+    expect(result.i).toBe(11);
+  });
+  
+  it("should subtract", function () {
+    var c1 = new complex.Complex(3, 8);
+    var c2 = new complex.Complex(2, 3);
+    
+    var result = c1.sub(c2);
+    expect(result.r).toBe(1);
+    expect(result.i).toBe(5);
   });
 });
