@@ -76,6 +76,14 @@ describe("Complex number", function () {
     expect(result.i).toBe(11);
   });
   
+  it("should add a simple number", function () {
+    var c1 = new complex.Complex(3, 8);
+    
+    var result = c1.add(2, 3);
+    expect(result.r).toBe(5);
+    expect(result.i).toBe(11);
+  });
+  
   it("should subtract", function () {
     var c1 = new complex.Complex(3, 8);
     var c2 = new complex.Complex(2, 3);

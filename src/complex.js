@@ -52,7 +52,19 @@ function Complex(real, im) {
   };
   
   this.add = function(complex) {
-    return new Complex(this.r + complex.r, this.i + complex.i);
+    var c;
+    var d;
+    if(arguments.length === 1 && typeof arguments[0] === "number") {
+      c = arguments[0];
+      d = 0;
+    } else if(arguments.length === 2 && typeof arguments[0] === "number" && typeof arguments[1] === "number") {
+      c = arguments[0];
+      d = arguments[1];
+    } else {
+      c = complex.r;
+      d = complex.i;
+    }
+    return new Complex(this.r + c, this.i + d);
   };
   
   this.sub = function(complex) {
