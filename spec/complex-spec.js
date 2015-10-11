@@ -9,6 +9,24 @@ describe("Complex number", function () {
     expect(product.r).toBe(-7);
     expect(product.i).toBe(22);
   });
+
+  it("should multiply with number datatypes as parameters", function () {
+    var c1 = new complex.Complex(2, 3);
+
+    var product = c1.mult(4, 5);
+    expect(product.r).toBe(-7);
+    expect(product.i).toBe(22);
+  });
+
+  it("should multiply with a single number datatype", function () {
+    var c1 = new complex.Complex(2, 3);
+
+    var product = c1.mult(4);
+    expect(product.r).toBe(8);
+    expect(product.i).toBe(12);
+  });
+  
+  
   
   it("should divide", function () {
     var c1 = new complex.Complex(4, 2);

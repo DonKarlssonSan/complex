@@ -10,8 +10,18 @@ function Complex(real, im) {
   this.mult = function(complex) {
     var a = this.r;
     var b = this.i;
-    var c = complex.r;
-    var d = complex.i;    
+    var c;
+    var d;
+    if(arguments.length === 1 && typeof arguments[0] === "number") {
+      c = arguments[0];
+      d = 0;
+    } else if(arguments.length === 2 && typeof arguments[0] === "number" && typeof arguments[1] === "number") {
+      c = arguments[0];
+      d = arguments[1];
+    } else {
+      c = complex.r;
+      d = complex.i;
+    }
     var real = a * c - b * d;
     var im = a * d + b * c;
     return new Complex(real, im);
