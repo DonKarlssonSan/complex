@@ -70,6 +70,12 @@ function Complex(real, im) {
   this.sub = function(complex) {
     return new Complex(this.r - complex.r, this.i - complex.i);
   };
+  
+  this.toPolar = function(complex) {
+    var φ = Math.atan2(this.i, this.r);
+    var r = Math.sqrt(this.r * this.r + this.i * this.i);    
+    return {r: r, phi: φ}; 
+  };
 };
 
 exports.Complex = Complex;

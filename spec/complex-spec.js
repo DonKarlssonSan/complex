@@ -92,4 +92,22 @@ describe("Complex number", function () {
     expect(result.r).toBe(1);
     expect(result.i).toBe(5);
   });
+  
+  it("should convert to polar", function () {
+    var c1 = new complex.Complex(0, 1);
+    
+    var result = c1.toPolar();
+    expect(result.r).toBe(1);
+    expect(result.phi).toBe(Math.PI/2);
+  });
+
+  it("should convert to polar", function () {
+    var c1 = new complex.Complex(-7, 0);
+    
+    var result = c1.toPolar();
+    expect(result.r).toBe(7);
+    expect(result.phi).toBe(Math.PI);
+  });
+  
+  
 });
