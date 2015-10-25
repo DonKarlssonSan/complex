@@ -16,6 +16,12 @@ In a JavaScript file:
     var c2 = new complex.Complex(3, 4);
     console.log(c1.mult(c2)); // { r: -5, i: 10 } 
 
+## Developing
+
+    git clone https://github.com/DonKarlssonSan/complex.git
+    cd complex
+    npm install
+
 ## Testing
 Run:
 
