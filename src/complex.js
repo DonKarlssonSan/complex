@@ -77,4 +77,8 @@ Complex.prototype.toPolar = function(complex) {
   return {r: r, phi: φ}; 
 };
 
+Complex.prototype.con = function() {
+  return new Complex(this.r, -this.i);
+}
+
 exports.Complex = Complex;

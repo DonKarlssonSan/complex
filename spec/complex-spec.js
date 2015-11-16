@@ -26,8 +26,6 @@ describe("Complex number", function () {
     expect(product.i).toBe(12);
   });
   
-  
-  
   it("should divide", function () {
     var c1 = new complex.Complex(4, 2);
     var c2 = new complex.Complex(3, -1);
@@ -109,5 +107,22 @@ describe("Complex number", function () {
     expect(result.phi).toBe(Math.PI);
   });
   
+  it("should calculate the conjugate", function () {
+    var c1 = new complex.Complex(7, 3);
+    
+    var result = c1.con();
+    expect(result.r).toBe(7);
+    expect(result.i).toBe(-3);
+  });
+
+  it("should calculate distributed conjugate", function () {
+    var c1 = new complex.Complex(7, 3);
+    var c2 = new complex.Complex(1, 2);
+    
+    var result1 = c1.add(c2).con();
+    var result2= c1.con().add(c2.con());
+    expect(result1.r).toBe(result2.r);
+    expect(result1.i).toBe(result2.i);
+  });
   
 });
