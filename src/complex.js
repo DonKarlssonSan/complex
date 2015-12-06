@@ -81,4 +81,8 @@ Complex.prototype.con = function() {
   return new Complex(this.r, -this.i);
 }
 
+Complex.prototype.abs = function() {
+  return Math.sqrt(this.r*this.r + this.i*this.i);
+}
+
 exports.Complex = Complex;

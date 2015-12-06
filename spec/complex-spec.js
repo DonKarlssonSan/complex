@@ -125,4 +125,17 @@ describe("Complex number", function () {
     expect(result1.i).toBe(result2.i);
   });
   
+  it("should return the the absolute value", function () {
+    // sqrt(3^2 + 4^2) = sqrt(9+16) = sqrt(25) = 5
+    var c = new complex.Complex(3, 4);
+    var result = c.abs();
+    expect(result).toBe(5);
+  });
+  
+  it("should return the the absolute value again", function () {
+    var c = new complex.Complex(1, 1);
+    var result = c.abs();
+    expect(result).toBe(Math.SQRT2);
+  });
+  
 });
