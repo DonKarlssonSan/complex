@@ -1,6 +1,5 @@
 // Complex numbers 
 // verbose code on purpose
-// just playing around with node.js
 var Complex = function(real, im) {
   this.r = real;
   this.i = im;
@@ -43,7 +42,6 @@ Complex.prototype.div = function(complex) {
 // Let z = r(cos θ + i sin θ)
 // Then z^n = r^n (cos nθ + i sin nθ)
 Complex.prototype.pow = function(n) {
-  //console.log(this);
   var θ = Math.atan2(this.i, this.r);
   var r = Math.sqrt(this.r * this.r + this.i * this.i);
   var real = Math.pow(r, n) * Math.cos(n*θ);
@@ -83,6 +81,10 @@ Complex.prototype.con = function() {
 
 Complex.prototype.abs = function() {
   return Math.sqrt(this.r*this.r + this.i*this.i);
+}
+
+Complex.prototype.neg = function() {
+  return new Complex(-this.r, -this.i);
 }
 
 exports.Complex = Complex;

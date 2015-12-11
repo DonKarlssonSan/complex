@@ -138,4 +138,11 @@ describe("Complex number", function () {
     expect(result).toBe(Math.SQRT2);
   });
   
+  it("should return the additive inverse", function () {
+    var c = new complex.Complex(4, 5);
+    var result = c.neg();
+    expect(result.r).toBe(-4);
+    expect(result.i).toBe(-5);
+  });
+  
 });
