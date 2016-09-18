@@ -87,4 +87,18 @@ Complex.prototype.neg = function() {
   return new Complex(-this.r, -this.i);
 }
 
+//cos(a+bi) = cos(a) * cosh(b) − i * sin(a) * sinh(b)
+Complex.prototype.cos = function() {
+  var a = this.r;
+  var b = this.i;
+  return new Complex(Math.cos(a) * Math.cosh(b), -Math.sin(a)*Math.sinh(b));
+}
+
+//sin(a+bi) = sin(a) * cosh(b) + i * cos(a) * sinh(b)
+Complex.prototype.sin = function() {
+  var a = this.r;
+  var b = this.i;
+  return new Complex(Math.sin(a) * Math.cosh(b), Math.cos(a)*Math.sinh(b));
+}
+
 exports.Complex = Complex;

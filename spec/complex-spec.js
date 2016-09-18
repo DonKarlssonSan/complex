@@ -145,4 +145,20 @@ describe("Complex number", function () {
     expect(result.i).toBe(-5);
   });
   
+  it("should return cosine", function () {
+    var c = new complex.Complex(0, 1);
+    var result = c.cos();
+    expect(result.r).toBeCloseTo(1.543, 3);
+    expect(result.i).toBe(0);
+  });
+
+  it("should return sine", function () {
+    // sin(a + bi) = sin(a) * cosh(b) + i*cos(a) * sinh(b)
+    // sin(0 + i) = sin(0) * cosh(1) + i*cos(0) * sinh(1) = 
+    // = i * sinh(1) = 1.18
+    var c = new complex.Complex(0, 1);
+    var result = c.sin();
+    expect(result.r).toBe(0);
+    expect(result.i).toBeCloseTo(1.175, 3);
+  });
 });
