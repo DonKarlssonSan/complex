@@ -101,4 +101,4 @@ Complex.prototype.sin = function() {
   return new Complex(Math.sin(a) * Math.cosh(b), Math.cos(a)*Math.sinh(b));
 }
 
-exports.Complex = Complex;
+module.exports = Complex;

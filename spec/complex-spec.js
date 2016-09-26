@@ -1,9 +1,9 @@
-var complex = require("../src/complex");
+var Complex = require("../src/complex");
 
 describe("Complex number", function () {
   it("should multiply", function () {
-    var c1 = new complex.Complex(2, 3);
-    var c2 = new complex.Complex(4, 5);
+    var c1 = new Complex(2, 3);
+    var c2 = new Complex(4, 5);
 
     var product = c1.mult(c2);
     expect(product.r).toBe(-7);
@@ -11,7 +11,7 @@ describe("Complex number", function () {
   });
 
   it("should multiply with number datatypes as parameters", function () {
-    var c1 = new complex.Complex(2, 3);
+    var c1 = new Complex(2, 3);
 
     var product = c1.mult(4, 5);
     expect(product.r).toBe(-7);
@@ -19,7 +19,7 @@ describe("Complex number", function () {
   });
 
   it("should multiply with a single number datatype", function () {
-    var c1 = new complex.Complex(2, 3);
+    var c1 = new Complex(2, 3);
 
     var product = c1.mult(4);
     expect(product.r).toBe(8);
@@ -27,8 +27,8 @@ describe("Complex number", function () {
   });
   
   it("should divide", function () {
-    var c1 = new complex.Complex(4, 2);
-    var c2 = new complex.Complex(3, -1);
+    var c1 = new Complex(4, 2);
+    var c2 = new Complex(3, -1);
 
     var result = c1.div(c2);
     expect(result.r).toBe(1);
@@ -37,8 +37,8 @@ describe("Complex number", function () {
 
   // multiply with self should be the same as power of 2
   it("should be raised to power of 2", function () {
-    var c1 = new complex.Complex(2, 5);
-    var c2 = new complex.Complex(2, 5);
+    var c1 = new Complex(2, 5);
+    var c2 = new Complex(2, 5);
 
     var product = c1.mult(c2);
     
@@ -49,7 +49,7 @@ describe("Complex number", function () {
 
   // http://web.pdx.edu/~caughman/Cindy%20501%20Final.pdf
   it("should be raised to power of 6", function () {
-    var c1 = new complex.Complex(2, 2);
+    var c1 = new Complex(2, 2);
     
     var testResult = c1.pow(6);
     expect(testResult.r).toBeCloseTo(0, 12);
@@ -57,8 +57,8 @@ describe("Complex number", function () {
   });
   
   it("should be possible to chain method calls", function () {
-    var c1 = new complex.Complex(3, 8);
-    var c2 = new complex.Complex(2, 3);
+    var c1 = new Complex(3, 8);
+    var c2 = new Complex(2, 3);
     
     var result = c1.mult(c2).div(c2).mult(c2).div(c2);
     expect(result.r).toBe(c1.r);
@@ -66,8 +66,8 @@ describe("Complex number", function () {
   });
   
   it("should add", function () {
-    var c1 = new complex.Complex(3, 8);
-    var c2 = new complex.Complex(2, 3);
+    var c1 = new Complex(3, 8);
+    var c2 = new Complex(2, 3);
     
     var result = c1.add(c2);
     expect(result.r).toBe(5);
@@ -75,7 +75,7 @@ describe("Complex number", function () {
   });
   
   it("should add a simple number", function () {
-    var c1 = new complex.Complex(3, 8);
+    var c1 = new Complex(3, 8);
     
     var result = c1.add(2, 3);
     expect(result.r).toBe(5);
@@ -83,8 +83,8 @@ describe("Complex number", function () {
   });
   
   it("should subtract", function () {
-    var c1 = new complex.Complex(3, 8);
-    var c2 = new complex.Complex(2, 3);
+    var c1 = new Complex(3, 8);
+    var c2 = new Complex(2, 3);
     
     var result = c1.sub(c2);
     expect(result.r).toBe(1);
@@ -92,7 +92,7 @@ describe("Complex number", function () {
   });
   
   it("should convert to polar", function () {
-    var c1 = new complex.Complex(0, 1);
+    var c1 = new Complex(0, 1);
     
     var result = c1.toPolar();
     expect(result.r).toBe(1);
@@ -100,7 +100,7 @@ describe("Complex number", function () {
   });
 
   it("should convert to polar", function () {
-    var c1 = new complex.Complex(-7, 0);
+    var c1 = new Complex(-7, 0);
     
     var result = c1.toPolar();
     expect(result.r).toBe(7);
@@ -108,7 +108,7 @@ describe("Complex number", function () {
   });
   
   it("should calculate the conjugate", function () {
-    var c1 = new complex.Complex(7, 3);
+    var c1 = new Complex(7, 3);
     
     var result = c1.con();
     expect(result.r).toBe(7);
@@ -116,8 +116,8 @@ describe("Complex number", function () {
   });
 
   it("should calculate distributed conjugate", function () {
-    var c1 = new complex.Complex(7, 3);
-    var c2 = new complex.Complex(1, 2);
+    var c1 = new Complex(7, 3);
+    var c2 = new Complex(1, 2);
     
     var result1 = c1.add(c2).con();
     var result2= c1.con().add(c2.con());
@@ -127,26 +127,26 @@ describe("Complex number", function () {
   
   it("should return the the absolute value", function () {
     // sqrt(3^2 + 4^2) = sqrt(9+16) = sqrt(25) = 5
-    var c = new complex.Complex(3, 4);
+    var c = new Complex(3, 4);
     var result = c.abs();
     expect(result).toBe(5);
   });
   
   it("should return the the absolute value again", function () {
-    var c = new complex.Complex(1, 1);
+    var c = new Complex(1, 1);
     var result = c.abs();
     expect(result).toBe(Math.SQRT2);
   });
   
   it("should return the additive inverse", function () {
-    var c = new complex.Complex(4, 5);
+    var c = new Complex(4, 5);
     var result = c.neg();
     expect(result.r).toBe(-4);
     expect(result.i).toBe(-5);
   });
   
   it("should return cosine", function () {
-    var c = new complex.Complex(0, 1);
+    var c = new Complex(0, 1);
     var result = c.cos();
     expect(result.r).toBeCloseTo(1.543, 3);
     expect(result.i).toBe(0);
@@ -156,7 +156,7 @@ describe("Complex number", function () {
     // sin(a + bi) = sin(a) * cosh(b) + i*cos(a) * sinh(b)
     // sin(0 + i) = sin(0) * cosh(1) + i*cos(0) * sinh(1) = 
     // = i * sinh(1) = 1.18
-    var c = new complex.Complex(0, 1);
+    var c = new Complex(0, 1);
     var result = c.sin();
     expect(result.r).toBe(0);
     expect(result.i).toBeCloseTo(1.175, 3);

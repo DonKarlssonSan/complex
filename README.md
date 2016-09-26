@@ -11,9 +11,9 @@ Run this on the command line:
 ## Using
 In a JavaScript file:
 
-    var complex = require("complex");
-    var c1 = new complex.Complex(1, 2);
-    var c2 = new complex.Complex(3, 4);
+    var Complex = require("complex");
+    var c1 = new Complex(1, 2);
+    var c2 = new Complex(3, 4);
     console.log(c1.mult(c2)); // { r: -5, i: 10 } 
 
 ## Developing
